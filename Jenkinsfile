@@ -33,7 +33,6 @@
       stage('Checkout SCM') {
     	  steps{
           container('build-agent'){
-            git branch: 'main',    url: 'https://github.com/careem111/kops-build-pod.git'
             sh 'mvn clean deploy -s settings.xml'
             }
 	        }
