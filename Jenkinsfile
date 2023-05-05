@@ -9,7 +9,7 @@
                 app: build
         spec:
           containers:
-          - name: build-agent
+          - name: build
             image: careem785/jenkins-build-agent:2.0
             command: 
              - cat
