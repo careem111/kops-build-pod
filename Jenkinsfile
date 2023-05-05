@@ -12,7 +12,7 @@
           serviceAccount: jenkins-admin
           containers:
           - name: build-agent
-            image: careem785/jenkins-build-agent:2.0
+            image: dpthub/edbuild
             command: 
              - cat
             tty: true
