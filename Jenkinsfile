@@ -26,9 +26,6 @@
       '''
         }
    }
-   tools {
-        maven 'maven'
-    }
     stages {
       stage('Checkout SCM') {
     	  steps{
