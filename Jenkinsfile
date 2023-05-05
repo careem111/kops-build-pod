@@ -5,11 +5,13 @@
         apiVersion: v1
         kind: Pod
         metadata:
+            name: build-agent
             labels:
-                app: build
+                app: build-agent
         spec:
+          serviceAccount: jenkins-admin
           containers:
-          - name: build
+          - name: build-agent
             image: careem785/jenkins-build-agent:2.0
             command: 
              - cat
@@ -31,7 +33,7 @@
       stage('Checkout SCM') {
     	  steps{
           container('build-agent'){
-            git branch: 'main',    url: 'https://github.com/careem111/loginapp-integration.git'
+            git branch: 'main',    url: 'https://github.com/careem111/kops-build-pod.git'
             sh 'mvn clean deploy -s settings.xml'
             }
 	        }
